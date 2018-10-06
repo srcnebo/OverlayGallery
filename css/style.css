@@ -1,0 +1,93 @@
+@font-face {
+  font-family: sansation;
+  src: url("Sansation_Bold.ttf");
+}
+
+/* font-family: 'Roboto', sans-serif;
+font-family: 'Montserrat', sans-serif;
+font-family: 'Exo', sans-serif; */
+
+html {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+}
+
+body {
+  background: url("../assets/coffee.jpg") no-repeat;
+  background-color: #1a1a1a66;
+  background-size: contain;
+}
+main {
+}
+
+h2 {
+  font-size: 2rem;
+  font-weight: 100;
+}
+
+header {
+  background: #1a1a1a;
+  color: white;
+}
+
+.top-bar {
+  display: grid;
+  grid-template-columns: 200px auto;
+}
+.logo > img {
+  max-width: 200px;
+  min-width: 180px;
+}
+.site-heading {
+  justify-self: center;
+}
+.container {
+  max-width: 960px;
+  margin: auto;
+}
+.main-display {
+  position: relative;
+}
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+.photo img {
+  max-width: 300px;
+}
+.overlay {
+  background: #ffffffcc;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  width: 750px;
+  height: 500px;
+  z-index: 100;
+}
+.overlay-image {
+  max-width: 300px;
+  max-width: auto;
+}
+button {
+  width: 50px;
+  height: 20px;
+}
+
+/* Mobile screens  */
+@media only screen and (max-width: 660px) {
+  .top-bar {
+    display: grid;
+    grid-template-rows: auto 1fr;
+  }
+  .logo {
+    justify-self: center;
+  }
+  .site-heading {
+    grid-area: 2/1;
+    text-align: center;
+  }
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+}
