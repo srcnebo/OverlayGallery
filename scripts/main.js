@@ -45,6 +45,20 @@ const lightBox = function(id, imgUrl) {
   console.log(imgUrl);
 };
 
+const modalBox = function() {
+  photosInfo.forEach((element, index) => {
+    const image = document.createElement("div");
+    const modalContent = document.querySelector(".modal-content");
+    modalContent.appendChild(image);
+    image.innerHTML = `<img src = '../images/${element.src}'> 
+    <div> <p>firstname: ${element.firstName}</p>
+    
+    
+    </div>`;
+  });
+};
+modalBox();
+
 const mosaic = document.querySelector(".gallery-grid");
 photosInfo.forEach((element, index) => {
   mosaic.innerHTML += `<div class="photo" id="${index}" onclick="lightBox(${index},'./images/${

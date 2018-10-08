@@ -13,31 +13,6 @@ const photosInfo = [
     favoriteQuote: `I don't know`,
     joinedOn: "August 2018"
   },
-
-  {
-    firstName: "Steven",
-    lastName: "Nebo",
-    title: "Junior Full-stack Developer",
-    nationality: "Russian",
-    src: "steven.jpg",
-    alt: "steven yo",
-    skills: [
-      "JavaScript",
-      "CSS",
-      "Photoshop",
-      "React.js",
-      "Redux",
-      "Node.js",
-      "MongoDB",
-      "Wordpress"
-    ],
-    whySoftwareDeveloper: "Software is the future",
-    longTermVision: "Scrum Master at one of the largest Nordic corporations",
-    motivatesMe:
-      "The desire to constantly develop myself and grow my skill set",
-    favoriteQuote: "Be the change you want to see in the world",
-    joinedOn: "01/08/2018"
-  },
   {
     firstName: "HyeSoo ",
     lastName: "Park",
@@ -257,39 +232,11 @@ const photosInfo = [
       "Node.js",
       "Mongo DB"
     ],
-    whySoftwareDeveloper: `Time and again suddenly my computer wouldn't work, and then I had to use command prompt to fix it, and I started exploring more about it and loved how powerful that dark blinking rectangle was, wow now I am far from that but still exploring, now I come under the definition of software developer and yes I want to make my living out of it.`,
+    whySoftwareDeveloper: `I came under the definition of software developer and yes I want to make my living out of it.`,
     longTermVision:
       "To be happy of what I do and to find things that makes me happy doing",
     motivatesMe: "The release of dopamine when the program runs",
     favoriteQuote: "One life, Live well",
-    joinedOn: "01.08.2018"
-  },
-  {
-    firstName: "Daniel",
-    lastName: "Shaimi",
-    title: "Software Developer",
-    nationality: "Maroko",
-    src: "dan.jpg",
-    alt: "Dan photo",
-    skills: ["HTML5", "CSS3", "Javascript"],
-    whySoftwareDeveloper: ``,
-    longTermVision: "",
-    motivatesMe: "",
-    favoriteQuote: "",
-    joinedOn: "01.08.2018"
-  },
-  {
-    firstName: "Mohammed",
-    lastName: "El Abbassi",
-    title: "Software Developer",
-    nationality: "Maroko",
-    src: "mohammed.jpg",
-    alt: "Mohammed photo",
-    skills: ["HTML5", "CSS3", "Javascript"],
-    whySoftwareDeveloper: ``,
-    longTermVision: "",
-    motivatesMe: "",
-    favoriteQuote: "",
     joinedOn: "01.08.2018"
   },
   {
