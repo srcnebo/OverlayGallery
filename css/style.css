@@ -32,6 +32,7 @@ h2 {
 header {
   background: #1a1a1a;
   color: white;
+  box-sizing: border-box;
 }
 
 .top-bar {
@@ -58,9 +59,13 @@ header {
 .gallery-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
+  grid-gap: 2rem;
+  margin-top: 3rem;
 }
-.photo img {
-  max-width: 300px;
+.gallery-grid img {
+  width: 100%;
+  max-width: 400px;
+  border-radius: 5px;
 }
 .overlay {
   background: #ffffffcc;
@@ -96,7 +101,7 @@ header {
   height: 427px;
   box-shadow: 0 5px 8px 0 #00000088, 0 7px 20px 0 #00000031;
   animation-name: modalopen;
-  animation-duration: 1s;
+  animation-duration: 0.6s;
 }
 .modal-wrapper {
   display: grid;
@@ -108,6 +113,14 @@ header {
 }
 .display-img > img {
   max-width: 320px;
+}
+.details {
+  padding: 10px;
+  color: #00000083;
+}
+.fullName {
+  color: #e17305;
+  font-size: 18px;
 }
 button {
   max-width: 80px;
@@ -135,15 +148,32 @@ button {
   text-decoration: none;
   cursor: pointer;
 }
+@keyframes modalopen {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
 
 /* Mobile screens  */
 @media only screen and (max-width: 660px) {
   .top-bar {
     display: grid;
     grid-template-rows: auto 1fr;
+    grid-template-columns: auto;
   }
   .logo {
     justify-self: center;
+    text-align: center;
+  }
+  .logo img {
+    width: 100%;
+    max-width: 200px;
+  }
+  .top-bar {
+    display: grid;
   }
   .site-heading {
     grid-area: 2/1;

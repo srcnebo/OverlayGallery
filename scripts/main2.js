@@ -1,13 +1,14 @@
 const slideGallery = {
   photosInfo,
   index: -1,
+  //show next photo in Modal
   nextPic() {
     this.index < this.photosInfo.length - 1 ? this.index++ : (this.index = 0);
     const displayImg = document.querySelector(".display-img");
     displayImg.innerHTML = `
     <img src='../images/${this.photosInfo[this.index].src}'>
       <div class ="details">
-       <p>name: ${this.photosInfo[this.index].firstName} ${
+       <p class='fullName'>${this.photosInfo[this.index].firstName} ${
       this.photosInfo[this.index].lastName
     }</p>
        <p>Title: ${this.photosInfo[this.index].title}</p>
@@ -21,12 +22,13 @@ const slideGallery = {
        <p>Date joined: ${this.photosInfo[this.index].joinedOn}</p>
       </div>`;
   },
+  // Show clicked photos in Modal
   showPic(showCurrent) {
     const displayImg = document.querySelector(".display-img");
     displayImg.innerHTML = `
     <img src='../images/${this.photosInfo[showCurrent].src}'>
       <div class ="details">
-       <p>name: ${this.photosInfo[showCurrent].firstName} ${
+       <p class='fullName'>${this.photosInfo[showCurrent].firstName} ${
       this.photosInfo[showCurrent].lastName
     }</p>
        <p>Title: ${this.photosInfo[showCurrent].title}</p>
@@ -40,7 +42,9 @@ const slideGallery = {
        <p>Date joined: ${this.photosInfo[showCurrent].joinedOn}</p>
       </div>`;
   },
-  test() {
+  // Initialize Grid to display all photos and attach event listener
+  // to every photo
+  initializeGrid() {
     const galleryGrid = document.querySelector(".gallery-grid");
 
     photosInfo.forEach((element, showCurrent) => {
@@ -53,12 +57,12 @@ const slideGallery = {
         slideGallery.showPic(showCurrent);
         modalBoxOpen();
       });
-      console.log(img, showCurrent);
+      //console.log(img, showCurrent);
     });
   }
 };
 
-slideGallery.test();
+slideGallery.initializeGrid();
 //Get modal
 const modal = document.querySelector(".modal");
 //Get close button
@@ -70,15 +74,21 @@ const nextBtn = document.querySelector(".nextBtn");
 const nextPerson = function() {
   slideGallery.nextPic();
 };
+// Open modal box
+const modalBoxOpen = function() {
+  modal.style.display = "block";
+};
 //Close modal function
 const closeModal = function() {
   modal.style.display = "none";
 };
-const modalBoxOpen = function() {
-  modal.style.display = "block";
+//Close modal on Outside click
+const outsideClick = function(e) {
+  if (e.target == modal) {
+    modal.style.display = "none";
+  }
 };
 //Event Listeners
 nextBtn.addEventListener("click", nextPerson);
 closeBtn.addEventListener("click", closeModal);
-
-//Display all images on site load
+modal.addEventListener("click", outsideClick);
