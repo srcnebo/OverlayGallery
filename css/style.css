@@ -18,9 +18,12 @@ html {
 }
 
 body {
-  /* background: url("../assets/coffee.jpg") no-repeat; */
-  background-color: #040406dd;
-  background-size: contain;
+  margin: 0;
+  padding: 0;
+  background: url("../assets/gallerybg.svg"),
+    linear-gradient(to bottom, #fdc830, #f37335);
+
+  background-size: 100px;
   font-size: 0.9rem;
 }
 
@@ -30,7 +33,7 @@ h2 {
 }
 
 header {
-  background: #1a1a1a;
+  background: linear-gradient(to top, #1c1c1c, #000000);
   color: white;
   box-sizing: border-box;
 }
@@ -50,9 +53,36 @@ header {
   max-width: 960px;
   margin: auto;
 }
+footer {
+  height: 30px;
+  background: black;
+  color: rgba(255, 255, 255, 0.335);
+  text-align: center;
+  line-height: 30px;
+}
 
-/* Main photo grid */
-/* ==================== */
+/*    Some redundant code   */
+/* ======================== */
+.overlay {
+  background: #ffffffcc;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  width: 750px;
+  height: 500px;
+  z-index: 100;
+}
+.overlay-image {
+  max-width: 300px;
+  max-width: auto;
+}
+.display-img > img {
+  max-width: 320px;
+}
+/* ======================== */
+
+/*    Main photo grid    */
+/* ====================  */
 .main-display {
   position: relative;
 }
@@ -67,21 +97,55 @@ header {
   max-width: 400px;
   border-radius: 5px;
 }
-.overlay {
-  background: #ffffffcc;
-  position: absolute;
-  top: 10px;
-  left: 10px;
-  width: 750px;
-  height: 500px;
-  z-index: 100;
+.display-img {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
 }
-.overlay-image {
-  max-width: 300px;
-  max-width: auto;
+.img-div {
+  position: relative;
+  overflow: hidden;
+}
+/* Doesnt work */
+/* .img-div img::after {
+  content: "";
+  width: 300px;
+  height: 100px;
+  background: red;
+  margin-bottom: -100px;
+  z-index: 999;
+} */
+.slideup {
+  visibility: hidden;
+  position: absolute;
+  bottom: 5px;
+  background: rgba(0, 0, 0, 0.7);
+  color: #ffffffaf;
+  font-family: "Exo", sans-serif;
+  text-transform: uppercase;
+  width: 100%;
+  border-radius: 7px;
+  height: 0px;
+  transition: all 0.3s;
+}
+.img-div:hover .slideup {
+  visibility: visible;
+  height: 398px;
+  cursor: pointer;
+  text-align: center;
+  line-height: 98px;
+}
+.slideup i {
+  display: block;
+  height: 50%;
+  line-height: 390px;
+  font-size: 24px;
+}
+.slideup-name {
+  font-size: 1rem;
+  color: #f4f4f4;
 }
 
-/* New Modal */
+/*  New Modal window  */
 /* ==================== */
 .modal {
   display: none;
@@ -107,13 +171,7 @@ header {
   display: grid;
   grid-template-rows: 1fr auto;
 }
-.display-img {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-}
-.display-img > img {
-  max-width: 320px;
-}
+
 .details {
   padding: 10px;
   color: #00000083;
@@ -148,6 +206,7 @@ button {
   text-decoration: none;
   cursor: pointer;
 }
+
 @keyframes modalopen {
   from {
     opacity: 0;

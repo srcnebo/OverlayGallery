@@ -48,15 +48,32 @@ const slideGallery = {
     const galleryGrid = document.querySelector(".gallery-grid");
 
     photosInfo.forEach((element, showCurrent) => {
-      const img = document.createElement("img");
+      // const img = document.createElement("img");
+      const imgDiv = document.createElement("div");
+      imgDiv.className = "img-div";
+      // img.src = `./images/${element.src}`;
+      // galleryGrid.appendChild(img);
+      imgDiv.innerHTML = `
+        <img src = "./images/${element.src}">
+        <div class="slideup">
+          <i class="fas fa-eye"></i>
+          <span class="slideup-name">
+            ${element.firstName}
+          </span>
+        </div>
+        `;
+      galleryGrid.appendChild(imgDiv);
 
-      img.src = `./images/${element.src}`;
-      galleryGrid.appendChild(img);
-
-      img.addEventListener("click", function() {
+      imgDiv.addEventListener("click", function() {
         slideGallery.showPic(showCurrent);
         modalBoxOpen();
       });
+
+      // img.addEventListener("click", function() {
+      //   slideGallery.showPic(showCurrent);
+      //   modalBoxOpen();
+      // }
+      // );
       //console.log(img, showCurrent);
     });
   }
