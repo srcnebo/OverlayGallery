@@ -1,2 +1,4 @@
 Add searcch functionality
-add login securit functionality
+add login security functionality
+improve mobile design to card view
+

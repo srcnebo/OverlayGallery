@@ -55,6 +55,7 @@ header {
 }
 footer {
   height: 30px;
+
   background: black;
   color: rgba(255, 255, 255, 0.335);
   text-align: center;
@@ -129,6 +130,7 @@ footer {
 }
 .img-div:hover .slideup {
   visibility: visible;
+  height: 100%;
   height: 398px;
   cursor: pointer;
   text-align: center;
